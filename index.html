@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Youtube clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="favicon.icon" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="https://img.icons8.com/?size=1x&id=AIKpBfRmU6YN&format=png" class="menu-img">
+            <img src="data:image/png;base64,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" class="img-fluid youtube-img">
+          <form class="d-flex" role="search">
+           
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+            <img src="https://cdn-icons-png.flaticon.com/128/1082/1082810.png" class="Micro-img">
+          </form>
+          <img src="https://img.icons8.com/?size=1x&id=miOdcuWfm8y9&format=png" class="meet-img"> 
+          <img src="https://img.icons8.com/?size=1x&id=11642&format=png" class="notification-img">
+          <img src="https://yt3.ggpht.com/yti/AOXPAcUQBeYBafk39Eh2SptDuBo8OwJ4Exula2NYTnMDmA=s88-c-k-c0x00ffffff-no-rj" class="profile-img">
+        </div>
+      </nav>
+
+<div class="container">
+    <div class="carousel" data-flickity='{"autoplay" : true}'>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1  px-2 pt-1 pb-1" >All</button></div>
+        <div class="carousel-cell"> 
+            <button class="btn-primary mt-3 m-1 px-2 pt-1 pb-1">Dramedy</button></div>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 px-2 pt-1 pb-1">Computer Programming</button></div>
+        <div class="carousel-cell"> 
+            <button class="btn-primary mt-3 m-1 px-2 pt-1 pb-1">Music</button></div>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 pt-1 pb-1 px-2">English Speaking</button></div>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 px-2 pt-1 pb-1">Live</button></div>    
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 pt-1 pb-1 px-2">16d</button> </div>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 px-2 pt-1 pb-1">Machine Learning</button> </div>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 pt-1 pb-1 px-2">News</button></div>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 px-2 pt-1 pb-1">Marathi Cinema</button></div>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 px-2 pt-1 pb-1">Engineering</button></div>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 px-2 pt-1 pb-1">Apna College</button></div>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 pt-1 pb-1 px-2">News</button></div>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 px-2 pt-1 pb-1">Marathi Cinema</button></div>
+        <div class="carousel-cell">
+            <button class="btn-primary mt-3 m-1 px-2 pt-1 pb-1">Engineering</button></div>
+        <div class="carousel-cell">
+           <button class="btn-primary mt-3 m-1 px-2 pt-1 pb-1">Apna College</button></div>
+        </div>
+
+    
+
+
+    <div>
+    <div class="row">
+
+        <div class="col-md-3  col-sm-4">
+            <div class="card p-1 m-1 shadow">
+            <img src="https://i.ytimg.com/vi/KZehm-meGMg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBf-aPmgp9f-ywYN4ppq5Red1LxuA" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+            <p>Why my Resume got selected in Google |Microsoft |Amazon| How to make Resume</p>
+                </div></div>
+            <p class="channel-text fs-6 fw-light">Apna College • 70k views • 1 day ago</p>
+            </div>
+        </div>
+
+
+        <div class="col-md-3  col-sm-4">
+            <div class="card p-2 m-2 shadow">
+            <img src="https://i.ytimg.com/vi/p74CU2X3Pww/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD4FP2vth1j0jKnJQcjcn4BCl3Qgw" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+            <p>Maharashtrachi HasyaJatra - महाराष्ट्राची हास्यजत्रा - Ep 369 - Full Episode - 3rd October 2022</p>
+                </div></div>
+            <p class="channel-text  fs-6 fw-light" >Sony Marathi • 1M views • 1 year ago</p>
+            </div>
+        </div>
+
+
+        <div class="col-md-3  col-sm-4">
+            <div class="card p-2 m-2 shadow">
+            <img src="https://i.ytimg.com/vi/RsxdlLimruk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA3a7Ng_W01zTyJ_lLdJakEuJiA9g" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+            <p>🔴TCS Launched Free Certification Courses | Resume will get selected | Any Graduate/PG</p>
+                </div></div>
+            <p class="channel-text fs-6 fw-light">OnlineStudy4u • 100k views • 2 days ago</p>
+            </div>
+        </div>
+
+        <div class="col-md-3  col-sm-4">
+            <div class="card p-2 m-2 shadow">
+            <img src="https://i.ytimg.com/vi/RsxdlLimruk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA3a7Ng_W01zTyJ_lLdJakEuJiA9g" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+            <p>🔴TCS Launched Free Certification Courses | Resume will get selected | Any Graduate/PG</p>
+                </div></div>
+            <p class="channel-text fs-6 fw-light">OnlineStudy4u • 100k views • 2 days ago</p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-3  col-sm-4">
+            <div class="card p-2 m-3 shadow">
+            <img src="https://i.ytimg.com/vi/uTPzym1OVGk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBYNahUqWevda_3K3h513C8NvFgxQ" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+            <p>Mummy! | I Hate You | Yashika Behl | Hindi Story Telling | Likhon Dil Se |</p>
+                </div></div>
+            <p class="channel-text fs-6 fw-light">Linkhon Dil Se • 3k views • 6 week ago</p>
+            </div>
+        </div>
+
+        <div class="col-md-3  col-sm-4">
+            <div class="card p-2 m-3 shadow">
+            <img src="https://i.ytimg.com/vi/JhjnnGuvI0c/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB7kYszyOSXDDL5s2VKZkanTl2VOQ" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+                    <p>Tere Hawale : Laal Singh Chaddha | Aamir, Kareena | Arjit , Shilpa</p>
+               </div>
+            </div>
+                <p class="channel-text fs-6 fw-light"  >Arjit Singh • 85K views • 2 weeks ago </p>
+            </div>
+        </div>
+
+        <div class="col-md-3  col-sm-4">
+            <div class="card p-2 m-2 shadow">
+            <img src="https://i.ytimg.com/vi/RsxdlLimruk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA3a7Ng_W01zTyJ_lLdJakEuJiA9g" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+            <p>🔴TCS Launched Free Certification Courses | Resume will get selected | Any Graduate/PG</p>
+                </div></div>
+            <p class="channel-text fs-6 fw-light">OnlineStudy4u • 100k views • 2 days ago</p>
+            </div>
+        </div>
+
+        <div class="col-md-3  col-sm-4">
+            <div class="card p-2 m-2 shadow">
+            <img src="https://i.ytimg.com/vi/RsxdlLimruk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA3a7Ng_W01zTyJ_lLdJakEuJiA9g" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+            <p>🔴TCS Launched Free Certification Courses | Resume will get selected | Any Graduate/PG</p>
+                </div></div>
+            <p class="channel-text fs-6 fw-light">OnlineStudy4u • 100k views • 2 days ago</p>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="row">
+        
+        <div class="col-md-3  col-sm-4">
+            <div class="card p-2 m-2 shadow">
+            <img src="https://i.ytimg.com/an_webp/z3FV_LRgJ5o/mqdefault_6s.webp?du=3000&sqp=CJbUmaYG&rs=AOn4CLB03DuHr8GRF_31HtkvwkS2CldeAA" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+                    <p>Motu Patlu | Full Episode | John Ka badla | Animation | Cartoon |</p>
+                </div></div>
+            <p class="channel-text fs-6 fw-light">Sonic Gang • 78k views • 4 year ago</p>
+            </div>
+        </div>
+
+        <div class="col-md-3  col-sm-4">
+            <div class="card p-2 m-2 shadow">
+            <img src="https://i.ytimg.com/vi/Exw5bi8h2UA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDez8zFAlQo5Sh2FIs2PtdoO9R18Q" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+            <p>Introvert's|It's all in my head|Episode 1|Imagine Nation Pictures</p>
+                </div></div>
+            <p class="channel-text fs-6 fw-light">Imagine Natation Pictures • 1k views • 2 year ago</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4">
+            <div class="card p-2 m-2 shadow">
+            <img src="https://i.ytimg.com/vi/6ZwwapPikyQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAsnF1c5uXGIJg8Q6VKrbWW10kxAA" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+            <p>Samay Samjhayega Full Song | Tum Prem Ho Sad | Radha Krishn |LOFI Song</p>
+                </div></div>
+            <p class="channel-text fs-6 fw-light">ML Records • 2M views • 1 week ago</p>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4">
+            <div class="card p-2 m-2 shadow">
+            <img src="https://i.ytimg.com/vi/6ZwwapPikyQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAsnF1c5uXGIJg8Q6VKrbWW10kxAA" class="img-fluid">
+            <div class="d-flex">
+                <div>
+                    <img src="https://yt3.ggpht.com/u29zFydV0EBM6bIGpehpfyALu2SbmhGwa6_0u-Six0oPmQU54MPqWsTSZ5jAg892KMSpDH0T=s68-c-k-c0x00ffffff-no-rj" class="img-fluid channel-logo">
+                </div>
+                <div>
+            <p>Samay Samjhayega Full Song | Tum Prem Ho Sad | Radha Krishn |LOFI Song</p>
+                </div></div>
+            <p class="channel-text fs-6 fw-light">ML Records • 2M views • 1 week ago</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+
+.d-flex{
+    margin-left: auto;
+    margin-right: auto;
+}
+.form-control{
+    width: 550px;
+    border-radius: 30px;
+    border: 1.5px solid rgb(147, 144, 144);
+
+}
+.btn{
+    border-radius: 30px;
+    border: 0.5px solid gray;
+}
+.btn-primary {
+    border-radius: 10px;
+    border: none;
+    padding-right: 1px;
+    padding-left: 2px;
+}
+.channel-text{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.channel-logo{
+    width: 50px;
+    border-radius: 50%;
+    margin-top: 8px;
+}
+.Micro-img{
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    padding: 6px;
+    margin-top: 2.5px;
+    margin-left: 7px;
+    background-color: rgb(236, 236, 236);  
+}
+.menu-img{
+    height: 40px;
+    padding: 6px;
+    margin-top: 2.5px;
+    margin-left: 7px;
+}
+.meet-img{
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    padding: 6px;
+    margin-top: 2.5px; 
+}
+.profile-img{
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    padding: 6px;
+    margin-top: 2.5px; 
+}
+.notification-img{
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    padding: 6px;
+    margin-top: 2.5px;
+  
+}
+.youtube-img{
+    height: 45px;
+}
